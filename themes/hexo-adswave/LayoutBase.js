@@ -45,19 +45,21 @@ const LayoutBase = props => {
   )
   const { onLoading } = useGlobal()
   const throttleMs = 200
-  const scrollListener = useCallback(throttle(() => {
-    const targetRef = document.getElementById('wrapper')
-    const clientHeight = targetRef?.clientHeight
-    const scrollY = window.pageYOffset
-    const fullHeight = clientHeight - window.outerHeight
-    let per = parseFloat(((scrollY / fullHeight) * 100).toFixed(0))
-    if (per > 100) per = 100
-    const shouldShow = scrollY > 100 && per > 0
+  const scrollListener = useCallback(
+    throttle(() => {
+      const targetRef = document.getElementById('wrapper')
+      const clientHeight = targetRef?.clientHeight
+      const scrollY = window.pageYOffset
+      const fullHeight = clientHeight - window.outerHeight
+      let per = parseFloat(((scrollY / fullHeight) * 100).toFixed(0))
+      if (per > 100) per = 100
+      const shouldShow = scrollY > 100 && per > 0
 
-    if (shouldShow !== showFloatButton) {
-      switchShow(shouldShow)
-    }
-  }, throttleMs))
+      if (shouldShow !== showFloatButton) {
+        switchShow(shouldShow)
+      }
+    }, throttleMs)
+  )
   useEffect(() => {
     document.addEventListener('scroll', scrollListener)
     return () => document.removeEventListener('scroll', scrollListener)
@@ -68,15 +70,26 @@ const LayoutBase = props => {
   }
 
   return (
-    <div id='theme-hexo'>
-      <CommonHead meta={meta} siteInfo={siteInfo}/>
+    <div id="theme-hexo">
+      <CommonHead meta={meta} siteInfo={siteInfo} />
 
-      <TopNav {...props} />
+      {/* <TopNav {...props} /> */}
 
       {headerSlot}
 
-      <main id="wrapper" className={`${CONFIG_HEXO.HOME_BANNER_ENABLE ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
-        <div id="container-inner" className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'} >
+      <main
+        id="wrapper"
+        className={`${
+          CONFIG_HEXO.HOME_BANNER_ENABLE ? '' : 'pt-16'
+        } bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}
+      >
+        <div
+          id="container-inner"
+          className={
+            (BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') +
+            ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'
+          }
+        >
           <div className={'w-full max-w-4xl h-full ' + props.className}>
             {onLoading ? <LoadingCover /> : children}
           </div>
@@ -85,8 +98,17 @@ const LayoutBase = props => {
       </main>
 
       {/* 右下角悬浮 */}
-      <div className={(showFloatButton ? 'opacity-100 ' : 'invisible opacity-0') + '  duration-300 transition-all bottom-12 right-1 fixed justify-end z-20  text-white bg-indigo-500 dark:bg-hexo-black-gray rounded-sm'}>
-        <div className={'justify-center  flex flex-col items-center cursor-pointer'}>
+      <div
+        className={
+          (showFloatButton ? 'opacity-100 ' : 'invisible opacity-0') +
+          '  duration-300 transition-all bottom-12 right-1 fixed justify-end z-20  text-white bg-indigo-500 dark:bg-hexo-black-gray rounded-sm'
+        }
+      >
+        <div
+          className={
+            'justify-center  flex flex-col items-center cursor-pointer'
+          }
+        >
           <FloatDarkModeButton />
           {floatSlot}
           <JumpToTopButton />
