@@ -8,7 +8,16 @@ import * as ThemeComponents from '@theme-components'
  * 所有主题枚举
  */
 export const ALL_THEME = [
-  'hexo', 'matery', 'next', 'medium', 'fukasawa', 'nobelium', 'example', 'simple', 'gitbook'
+  'hexo',
+  'hexo-adswave',
+  'matery',
+  'next',
+  'medium',
+  'fukasawa',
+  'nobelium',
+  'example',
+  'simple',
+  'gitbook'
 ]
 
 /**
@@ -17,11 +26,13 @@ export const ALL_THEME = [
  * @param {*} router
  * @returns
  */
-export const getLayoutByTheme = (router) => {
+export const getLayoutByTheme = router => {
   const themeQuery = getQueryParam(router.asPath, 'theme') || BLOG.THEME
   const layout = getLayoutNameByPath(router.pathname)
   if (themeQuery !== BLOG.THEME) {
-    return dynamic(() => import(`@/themes/${themeQuery}/${layout}`), { ssr: true })
+    return dynamic(() => import(`@/themes/${themeQuery}/${layout}`), {
+      ssr: true
+    })
   } else {
     return ThemeComponents[layout]
   }
@@ -32,7 +43,7 @@ export const getLayoutByTheme = (router) => {
  * @param {*} path
  * @returns
  */
-export const getLayoutNameByPath = (path) => {
+export const getLayoutNameByPath = path => {
   switch (path) {
     case '/':
       return 'LayoutIndex'
@@ -80,7 +91,9 @@ export const initDarkMode = (isDarkMode, updateDarkMode) => {
   }
   updateDarkMode(isDarkMode)
   saveDarkModeToCookies(isDarkMode)
-  document.getElementsByTagName('html')[0].setAttribute('class', isDarkMode ? 'dark' : 'light')
+  document
+    .getElementsByTagName('html')[0]
+    .setAttribute('class', isDarkMode ? 'dark' : 'light')
 }
 
 /**
@@ -94,8 +107,15 @@ export function isPreferDark() {
   if (BLOG.APPEARANCE === 'auto') {
     // 系统深色模式或时间是夜间时，强行置为夜间模式
     const date = new Date()
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    return prefersDarkMode || (BLOG.APPEARANCE_DARK_TIME && (date.getHours() >= BLOG.APPEARANCE_DARK_TIME[0] || date.getHours() < BLOG.APPEARANCE_DARK_TIME[1]))
+    const prefersDarkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches
+    return (
+      prefersDarkMode ||
+      (BLOG.APPEARANCE_DARK_TIME &&
+        (date.getHours() >= BLOG.APPEARANCE_DARK_TIME[0] ||
+          date.getHours() < BLOG.APPEARANCE_DARK_TIME[1]))
+    )
   }
   return false
 }
@@ -109,10 +129,10 @@ export const loadDarkModeFromCookies = () => {
 }
 
 /**
-   * 保存深色模式
-   * @param newTheme
-   */
-export const saveDarkModeToCookies = (newTheme) => {
+ * 保存深色模式
+ * @param newTheme
+ */
+export const saveDarkModeToCookies = newTheme => {
   cookie.save('darkMode', newTheme, { path: '/' })
 }
 
@@ -125,9 +145,9 @@ export const loadThemeFromCookies = () => {
 }
 
 /**
-   * 保存默认主题
-   * @param newTheme
-   */
-export const saveThemeToCookies = (newTheme) => {
+ * 保存默认主题
+ * @param newTheme
+ */
+export const saveThemeToCookies = newTheme => {
   cookie.save('theme', newTheme, { path: '/' })
 }
