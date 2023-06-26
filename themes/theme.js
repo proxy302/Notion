@@ -28,16 +28,12 @@ export const ALL_THEME = [
  */
 export const getLayoutByTheme = router => {
   const themeQuery = getQueryParam(router.asPath, 'theme') || BLOG.THEME
-
   const layout = getLayoutNameByPath(router.pathname)
   if (themeQuery !== BLOG.THEME) {
-    // console.log('current theme is:', BLOG.THEME)
-
     return dynamic(() => import(`@/themes/${themeQuery}/${layout}`), {
       ssr: true
     })
   } else {
-    console.log('current theme is:', BLOG.THEME)
     return ThemeComponents[layout]
   }
 }
