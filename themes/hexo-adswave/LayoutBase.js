@@ -4,9 +4,7 @@ import throttle from 'lodash.throttle'
 import Footer from './components/Footer'
 import JumpToTopButton from './components/JumpToTopButton'
 import SideRight from './components/SideRight'
-// import TopNav from './components/TopNav'
-import TopNavAds from './components/TopNavAds'
-
+import TopNav from './components/TopNav'
 import FloatDarkModeButton from './components/FloatDarkModeButton'
 import Live2D from '@/components/Live2D'
 import LoadingCover from './components/LoadingCover'
@@ -75,8 +73,7 @@ const LayoutBase = props => {
     <div id="theme-hexo">
       <CommonHead meta={meta} siteInfo={siteInfo} />
 
-      {/* adswave 定制 navbar */}
-      <TopNavAds {...props} />
+      {/* <TopNav {...props} /> */}
 
       {headerSlot}
 
