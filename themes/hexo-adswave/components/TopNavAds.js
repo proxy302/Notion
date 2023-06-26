@@ -15,31 +15,12 @@ const TopNavAds = props => {
   }
 
   const MobileMenuItem = props => {
-    const { link, itemName } = props
+    const { link, itemName, className } = props
 
     return (
-      <a className="block text-lg py-2" href={link}>
+      <a className={'block text-lg py-2' + ' ' + className} href={link}>
         {itemName}
       </a>
-    )
-  }
-  const DesktopMenuItem = props => {
-    const { link, itemName } = props
-
-    return (
-      <a className="mx-2 hover:underline" href={link}>
-        {itemName}
-      </a>
-    )
-  }
-
-  const Proxy302Logo = () => {
-    return (
-      <img
-        className="image w-36"
-        src="https://www.proxy302.com/assets/imgs/logo.png?_=1677746101"
-        alt=""
-      />
     )
   }
 
@@ -48,13 +29,25 @@ const TopNavAds = props => {
       {/* desktop mode */}
       <div className="header-ads-desktop hidden py-3 w-full bg-white shadow-lg fixed z-40 top-0 left-0 sm:grid grid-cols-3 gap-5 justify-items-center items-center">
         <div className="header-nav flex">
-          <DesktopMenuItem link="#" itemName="主页" />
-          <DesktopMenuItem link="#" itemName="特点" />
-          <DesktopMenuItem link="#" itemName="价格" />
-          <DesktopMenuItem link="#" itemName="联系我们" />
+          <a className="mx-2 hover:underline" href="#">
+            主页
+          </a>
+          <a className="mx-2 hover:underline" href="#">
+            特点
+          </a>
+          <a className="mx-2 hover:underline" href="#">
+            价格
+          </a>
+          <a className="mx-2 hover:underline" href="#">
+            联系我们
+          </a>
         </div>
         <div className="header-logo">
-          <Proxy302Logo />
+          <img
+            className="image w-36"
+            src="https://www.proxy302.com/assets/imgs/logo.png?_=1677746101"
+            alt=""
+          />
         </div>
         <div className="header-right flex items-center">
           <a
@@ -63,7 +56,9 @@ const TopNavAds = props => {
           >
             登录/注册
           </a>
-          <DesktopMenuItem link="#" itemName="English" />
+          <a href="#" className="mx-2">
+            English
+          </a>
         </div>
       </div>
 
@@ -73,7 +68,11 @@ const TopNavAds = props => {
           <MenuUnfoldOutlined className="text-xl px-6" onClick={showDrawer} />
         </Space>
         <div className="header-logo mr-6">
-          <Proxy302Logo />
+          <img
+            className="image w-36"
+            src="https://www.proxy302.com/assets/imgs/logo.png?_=1677746101"
+            alt=""
+          />
         </div>
         <Drawer
           title="Menu"
