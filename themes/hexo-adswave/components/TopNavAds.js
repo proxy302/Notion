@@ -14,32 +14,41 @@ const TopNavAds = props => {
     setOpen(false)
   }
 
-  const MobileMenuItem = props => {
+  const MenuItem = props => {
     const { link, itemName } = props
 
     return (
-      <a className="block text-lg py-2" href={link}>
-        {itemName}
-      </a>
+      <>
+        <a className="block sm:hidden text-lg py-2" href={link}>
+          {itemName}
+        </a>
+        <a className="hidden sm:block mx-2 hover:underline" href={link}>
+          {itemName}
+        </a>
+      </>
     )
   }
-  const DesktopMenuItem = props => {
-    const { link, itemName } = props
 
+  const LoginButton = () => {
     return (
-      <a className="mx-2 hover:underline" href={link}>
-        {itemName}
+      <a
+        href="https://dashboard.proxy302.com/login"
+        className="sm:mx-2 px-6 py-2 rounded-full bg-[#5e79ee] text-white font-bold"
+      >
+        登录/注册
       </a>
     )
   }
 
   const Proxy302Logo = () => {
     return (
-      <img
-        className="image w-36"
-        src="https://www.proxy302.com/assets/imgs/logo.png?_=1677746101"
-        alt=""
-      />
+      <a href="/">
+        <img
+          className="image w-36"
+          src="https://www.proxy302.com/assets/imgs/logo.png?_=1677746101"
+          alt=""
+        />
+      </a>
     )
   }
 
@@ -48,22 +57,18 @@ const TopNavAds = props => {
       {/* desktop mode */}
       <div className="header-ads-desktop hidden py-3 w-full bg-white shadow-lg fixed z-40 top-0 left-0 sm:grid grid-cols-3 gap-5 justify-items-center items-center">
         <div className="header-nav flex">
-          <DesktopMenuItem link="/" itemName="主页" />
-          <DesktopMenuItem link="#" itemName="特点" />
-          <DesktopMenuItem link="#" itemName="价格" />
-          <DesktopMenuItem link="#" itemName="联系我们" />
+          <MenuItem link="/" itemName="主页" />
+          <MenuItem link="#" itemName="特点" />
+          <MenuItem link="#" itemName="价格" />
+          <MenuItem link="#" itemName="联系我们" />
+          <MenuItem link="#" itemName="文章资讯" />
         </div>
         <div className="header-logo">
           <Proxy302Logo />
         </div>
         <div className="header-right flex items-center">
-          <a
-            href="https://dashboard.proxy302.com/login"
-            className="mx-2 px-4 py-1 rounded-full bg-[#5e79ee] text-white font-bold"
-          >
-            登录/注册
-          </a>
-          <DesktopMenuItem link="#" itemName="English" />
+          <LoginButton />
+          <MenuItem link="#" itemName="English" />
         </div>
       </div>
 
@@ -82,18 +87,17 @@ const TopNavAds = props => {
           onClose={onClose}
           open={open}
           key="left"
+          className="relative"
         >
-          <MobileMenuItem link="/" itemName="主页" />
-          <MobileMenuItem link="#" itemName="特点" />
-          <MobileMenuItem link="#" itemName="价格" />
-          <MobileMenuItem link="#" itemName="联系我们" />
-          <a
-            href="https://dashboard.proxy302.com/login"
-            className="inline-block mt-10 px-4 py-1 rounded-full bg-[#5e79ee] text-white font-bold"
-          >
-            登录/注册
-          </a>
-          <MobileMenuItem className="font-bold" link="#" itemName="English" />
+          <MenuItem link="/" itemName="主页" />
+          <MenuItem link="#" itemName="特点" />
+          <MenuItem link="#" itemName="价格" />
+          <MenuItem link="#" itemName="联系我们" />
+          <MenuItem link="#" itemName="文章资讯" />
+          <MenuItem className="font-bold" link="#" itemName="English" />
+          <div className="mobile-login absolute bottom-6">
+            <LoginButton />
+          </div>
         </Drawer>
       </div>
     </div>
