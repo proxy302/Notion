@@ -6,6 +6,7 @@ import JumpToTopButton from './components/JumpToTopButton'
 import SideRight from './components/SideRight'
 // import TopNav from './components/TopNav'
 import TopNavAds from './components/TopNavAds'
+import SearchBarAds from './components/SearchBarAds'
 
 import FloatDarkModeButton from './components/FloatDarkModeButton'
 import Live2D from '@/components/Live2D'
@@ -86,6 +87,7 @@ const LayoutBase = props => {
           CONFIG_HEXO.HOME_BANNER_ENABLE ? '' : 'pt-16'
         } mt-12 bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}
       >
+        <SearchBarAds />
         <div
           id="container-inner"
           className={
