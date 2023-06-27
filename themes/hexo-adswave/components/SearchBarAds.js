@@ -8,7 +8,7 @@ const SearchBarAds = props => {
   const { Search } = Input
 
   const onSearch = value => {
-    location.href += `/search/${value}`
+    location.replace(`/search/${value}`)
   }
 
   const SearchInput = () => (
