@@ -67,14 +67,14 @@ export default function SideRight(props) {
         <HexoRecentComments />
       )}
 
-      <div className="sticky top-20">
+      {/* <div className="sticky top-20">
         {post && post.toc && post.toc.length > 1 && (
           <Card>
             <Catalog toc={post.toc} />
           </Card>
         )}
         {slot}
-      </div>
+      </div> */}
     </div>
   )
 }
