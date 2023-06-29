@@ -9,6 +9,7 @@ import SideRight from './components/SideRight'
 import TopNavAds from './components/TopNavAds'
 import SearchBarAds from './components/SearchBarAds'
 import AnnouncementBarAds from './components/AnnouncementBarAds'
+import FooterAds from './components/FooterAds'
 
 import FloatDarkModeButton from './components/FloatDarkModeButton'
 import Live2D from '@/components/Live2D'
@@ -125,7 +126,8 @@ const LayoutBase = props => {
         </div>
       </div>
 
-      <Footer title={siteInfo?.title || BLOG.TITLE} />
+      {/* <Footer title={siteInfo?.title || BLOG.TITLE} /> */}
+      <FooterAds />
     </div>
   )
 }
