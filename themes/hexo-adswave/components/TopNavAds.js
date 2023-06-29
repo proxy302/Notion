@@ -43,11 +43,7 @@ const TopNavAds = props => {
   const Proxy302Logo = () => {
     return (
       <a href="/">
-        <img
-          className="image w-36"
-          src="https://www.proxy302.com/assets/imgs/logo.png?_=1677746101"
-          alt=""
-        />
+        <img className="image w-36" src="/proxy302-logo.png" alt="" />
       </a>
     )
   }
