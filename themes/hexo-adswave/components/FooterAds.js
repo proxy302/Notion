@@ -5,8 +5,8 @@
 const FooterAds = () => {
   return (
     <>
-      <div className="footer-ads pt-12 pb-28 grid grid-cols-3 bg-[#272d46] text-white">
-        <div className="footer-content col-span-1 flex flex-col pl-16 pt-4">
+      <div className="footer-ads pt-12 pb-28 grid grid-cols-2 sm:grid-cols-3 bg-[#272d46] text-white">
+        <div className="footer-content mb-14 sm:mb-0 col-span-full sm:col-span-1 flex flex-col sm:pl-16 pl-20 pt-4">
           <img
             className="footer-logo w-40 mb-8"
             src="/proxy302-logo-white.svg"
