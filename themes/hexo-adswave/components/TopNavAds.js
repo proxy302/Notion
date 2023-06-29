@@ -57,18 +57,17 @@ const TopNavAds = props => {
       {/* desktop mode */}
       <div className="header-ads-desktop hidden py-3 w-full bg-white shadow-lg fixed z-40 top-0 left-0 sm:grid grid-cols-3 gap-5 justify-items-center items-center">
         <div className="header-nav flex">
-          <MenuItem link="/" itemName="主页" />
+          <MenuItem link="https://proxy302.com" itemName="主页" />
           <MenuItem link="#" itemName="特点" />
           <MenuItem link="#" itemName="价格" />
           <MenuItem link="#" itemName="联系我们" />
-          <MenuItem link="#" itemName="文章资讯" />
+          <MenuItem link="/" itemName="文章资讯" />
         </div>
         <div className="header-logo">
           <Proxy302Logo />
         </div>
         <div className="header-right flex items-center">
           <LoginButton />
-          <MenuItem link="#" itemName="English" />
         </div>
       </div>
 
@@ -89,12 +88,11 @@ const TopNavAds = props => {
           key="left"
           className="relative"
         >
-          <MenuItem link="/" itemName="主页" />
+          <MenuItem link="https://proxy302.com" itemName="主页" />
           <MenuItem link="#" itemName="特点" />
           <MenuItem link="#" itemName="价格" />
           <MenuItem link="#" itemName="联系我们" />
-          <MenuItem link="#" itemName="文章资讯" />
-          <MenuItem className="font-bold" link="#" itemName="English" />
+          <MenuItem link="/" itemName="文章资讯" />
           <div className="mobile-login absolute bottom-6">
             <LoginButton />
           </div>
