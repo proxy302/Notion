@@ -53,9 +53,9 @@ const TopNavAds = props => {
   }
 
   return (
-    <div className="header-ads">
+    <div className="header-ads sticky top-0 z-40">
       {/* desktop mode */}
-      <div className="header-ads-desktop hidden py-3 w-full bg-white shadow-lg sticky z-40 top-0 left-0 sm:grid grid-cols-3 gap-5 justify-items-center items-center">
+      <div className="header-ads-desktop hidden py-3 w-full bg-white shadow-lg sm:grid grid-cols-3 gap-5 justify-items-center items-center">
         <div className="header-nav flex">
           <MenuItem link="https://proxy302.com" itemName="主页" />
           <MenuItem link="#" itemName="特点" />
@@ -72,7 +72,7 @@ const TopNavAds = props => {
       </div>
 
       {/* mobile mode */}
-      <div className="header-ads-mobile flex justify-between py-3 w-full bg-white shadow-lg sticky z-40 top-0 left-0 sm:hidden">
+      <div className="header-ads-mobile flex justify-between py-3 w-full bg-white shadow-lg sm:hidden">
         <Space>
           <MenuUnfoldOutlined className="text-xl px-6" onClick={showDrawer} />
         </Space>
