@@ -5,8 +5,10 @@ import Footer from './components/Footer'
 import JumpToTopButton from './components/JumpToTopButton'
 import SideRight from './components/SideRight'
 // import TopNav from './components/TopNav'
+
 import TopNavAds from './components/TopNavAds'
 import SearchBarAds from './components/SearchBarAds'
+import AnnouncementBarAds from './components/AnnouncementBarAds'
 
 import FloatDarkModeButton from './components/FloatDarkModeButton'
 import Live2D from '@/components/Live2D'
@@ -73,8 +75,11 @@ const LayoutBase = props => {
   }
 
   return (
-    <div id="theme-hexo">
+    <div id="theme-hexo" className="relative">
       <CommonHead meta={meta} siteInfo={siteInfo} />
+
+      {/* Announcement bar / Images */}
+      <AnnouncementBarAds />
 
       {/* adswave 定制 navbar */}
       <TopNavAds {...props} />
