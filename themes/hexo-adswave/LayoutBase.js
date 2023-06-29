@@ -90,7 +90,7 @@ const LayoutBase = props => {
         id="wrapper"
         className={`${
           CONFIG_HEXO.HOME_BANNER_ENABLE ? '' : 'pt-16'
-        } mt-12 bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}
+        } bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}
       >
         <SearchBarAds />
         <div
