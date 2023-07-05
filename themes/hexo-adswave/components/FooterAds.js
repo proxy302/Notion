@@ -18,16 +18,33 @@ const FooterAds = () => {
         </div>
         <div className="footer-nav-1 flex flex-col items-center font-bold">
           <h6>关于</h6>
-          <a href="">代理类型</a>
-          <a href="">产品特征</a>
-          <a href="">定价计划</a>
-          <a href="">用户案例</a>
-          <a href="">地理位置</a>
+          <a target="_blank" href="https://www.proxy302.com/#proxy-type">
+            代理类型
+          </a>
+          <a target="_blank" href="https://www.proxy302.com/#feature">
+            产品特征
+          </a>
+          <a target="_blank" href="https://www.proxy302.com/#price">
+            定价计划
+          </a>
+          <a target="_blank" href="https://www.proxy302.com/#tool">
+            用户案例
+          </a>
+          <a target="_blank" href="https://www.proxy302.com/#global">
+            地理位置
+          </a>
         </div>
         <div className="footer-nav-2 flex flex-col items-center font-bold">
           <h6>文件</h6>
-          <a href="">使用条款</a>
-          <a href="">隐私政策</a>
+          <a target="_blank" href="https://www.proxy302.com/terms-of-use.html">
+            使用条款
+          </a>
+          <a
+            target="_blank"
+            href="https://www.proxy302.com/privacy-policy.html"
+          >
+            隐私政策
+          </a>
         </div>
       </div>
       <style jsx>{`
