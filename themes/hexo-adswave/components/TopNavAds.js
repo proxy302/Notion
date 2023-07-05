@@ -19,10 +19,14 @@ const TopNavAds = props => {
 
     return (
       <>
-        <a className="block sm:hidden text-lg py-2" href={link}>
+        <a className="block sm:hidden text-lg py-2" target="_blank" href={link}>
           {itemName}
         </a>
-        <a className="hidden sm:block mx-2 hover:underline" href={link}>
+        <a
+          className="hidden sm:block mx-2 hover:underline"
+          target="_blank"
+          href={link}
+        >
           {itemName}
         </a>
       </>
@@ -54,9 +58,12 @@ const TopNavAds = props => {
       <div className="header-ads-desktop hidden py-3 w-full bg-white shadow-lg sm:grid grid-cols-3 gap-5 justify-items-center items-center">
         <div className="header-nav flex">
           <MenuItem link="https://proxy302.com" itemName="主页" />
-          <MenuItem link="#" itemName="特点" />
-          <MenuItem link="#" itemName="价格" />
-          <MenuItem link="#" itemName="联系我们" />
+          <MenuItem link="https://www.proxy302.com/#feature" itemName="特点" />
+          <MenuItem link="https://www.proxy302.com/#price" itemName="价格" />
+          <MenuItem
+            link="https://www.proxy302.com/#footer"
+            itemName="联系我们"
+          />
           <MenuItem link="/" itemName="文章资讯" />
         </div>
         <div className="header-logo">
@@ -85,9 +92,12 @@ const TopNavAds = props => {
           className="relative"
         >
           <MenuItem link="https://proxy302.com" itemName="主页" />
-          <MenuItem link="#" itemName="特点" />
-          <MenuItem link="#" itemName="价格" />
-          <MenuItem link="#" itemName="联系我们" />
+          <MenuItem link="https://www.proxy302.com/#feature" itemName="特点" />
+          <MenuItem link="https://www.proxy302.com/#price" itemName="价格" />
+          <MenuItem
+            link="https://www.proxy302.com/#footer"
+            itemName="联系我们"
+          />
           <MenuItem link="/" itemName="文章资讯" />
           <div className="mobile-login absolute bottom-6">
             <LoginButton />
