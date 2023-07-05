@@ -19,14 +19,10 @@ const TopNavAds = props => {
 
     return (
       <>
-        <a className="block sm:hidden text-lg py-2" target="_blank" href={link}>
+        <a className="block sm:hidden text-lg py-2" href={link}>
           {itemName}
         </a>
-        <a
-          className="hidden sm:block mx-2 hover:underline"
-          target="_blank"
-          href={link}
-        >
+        <a className="hidden sm:block mx-2 hover:underline" href={link}>
           {itemName}
         </a>
       </>
